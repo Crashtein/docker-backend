@@ -1,4 +1,4 @@
-def imageName="192.168.44.44:8082/docker_registry/frontend"
+def imageName="192.168.44.44:8082/docker_registry/backend"
 def dockerTag=""
 def dockerRegistry="https://192.168.44.44:8082"
 def registryCredentials = "artifactory"
@@ -15,7 +15,7 @@ pipeline {
         }
         stage('Get code') {
             steps {
-                git branch: 'main', url: 'https://github.com/Crashtein/docker-frontend.git'
+                git branch: 'main', url: 'https://github.com/Crashtein/docker-backend.git'
             }
         }
         stage('Unit tests') {
